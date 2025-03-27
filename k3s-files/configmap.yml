@@ -6,8 +6,5 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
 data:
-  DB_URL: postgres://postgres:goldtree9@103.252.242.68:5432/mydatabase
-  PORT: 3000
-
-
-  
+  DB_URL: "postgres://postgres:goldtree9@103.252.242.68:5432/mydatabase"
+  PORT: "3000" 
