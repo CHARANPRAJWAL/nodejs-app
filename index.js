@@ -1,11 +1,18 @@
 const express = require("express");
 const { Sequelize, DataTypes } = require("sequelize");
+const cors = require("cors");
+
 require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
+
+app.use(cors({
+  origin: "*" 
+}));
+
 
 // Database connection
 const sequelize = new Sequelize(process.env.DB_URL, {

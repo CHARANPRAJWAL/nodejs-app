@@ -1,0 +1,21 @@
+# k3s-files/apps/backend-app.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: frontend-app
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  project: coe-app
+  source:
+    repoURL: https://github.com/CHARANPRAJWAL/nodejs-app.git
+    targetRevision: main
+    path: k3s-files/frontend
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: nodejs-deployment
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
