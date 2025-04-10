@@ -8,7 +8,7 @@ spec:
   destination:
     namespace: argocd
     server: https://kubernetes.default.svc
-  project: coe-app
+  project: default
   source:
     repoURL: https://github.com/CHARANPRAJWAL/nodejs-app.git
     targetRevision: main
